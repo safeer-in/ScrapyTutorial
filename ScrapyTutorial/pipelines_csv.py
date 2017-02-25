@@ -6,13 +6,8 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-# class ScrapytutorialPipeline(object):
-
-#     def process_item(self, item, spider):
-#         return item
-
 from scrapy import signals
-from scrapy.exporters import XmlItemExporter
+from scrapy.exporters import CsvItemExporter
 
 
 class ScrapytutorialPipeline(object):
@@ -28,9 +23,9 @@ class ScrapytutorialPipeline(object):
         return pipeline
 
     def spider_opened(self, spider):
-        file = open('%s_products.xml' % spider.name, 'w+b')
+        file = open('%s_products.csv' % spider.name, 'w+b')
         self.files[spider] = file
-        self.exporter = XmlItemExporter(file)
+        self.exporter = CsvItemExporter(file)
         self.exporter.start_exporting()
 
     def spider_closed(self, spider):

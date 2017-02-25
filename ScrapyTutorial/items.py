@@ -8,7 +8,11 @@
 import scrapy
 
 
-class ScrapytutorialItem(scrapy.Item):
+class QuotesItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    author = scrapy.Field()
+    text = scrapy.Field()
+    tags = scrapy.Field()
+
+    def encode(self, obj):
+        return obj.__dict__
