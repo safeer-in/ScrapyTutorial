@@ -16,6 +16,7 @@ $ pip install -r requirements.txt
 running spiders
 
 ```sh
-$ scrapy crawl quotes -o data/quotes.json
-$ scrapy crawl author -o data/author.json
+$ scrapy crawl quotes
+$ scrapy crawl author
 ```
+Corresponding output files `quotes_file.csv` and `author_file.csv` will be created at project root folder

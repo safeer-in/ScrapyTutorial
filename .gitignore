@@ -90,3 +90,5 @@ ENV/
 
 # custom
 data/
+*.csv
+*.xml

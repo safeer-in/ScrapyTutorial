@@ -28,7 +28,7 @@ class ScrapytutorialPipeline(object):
         return pipeline
 
     def spider_opened(self, spider):
-        file = open('%s_products.xml' % spider.name, 'w+b')
+        file = open('%s_file.xml' % spider.name, 'w+b')
         self.files[spider] = file
         self.exporter = XmlItemExporter(file)
         self.exporter.start_exporting()
